@@ -1,113 +1,172 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, StyleSheet, Text, Button, ScrollView } from "react-native";
+// import { getFoodRepoToken, foodRepoParseName, foodRepoRequest } from "./Leo.js";
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+// Initialization---------------------------------------------
+const Stack = createStackNavigator();
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// var ids = ["0099482434366", "0646670317873", "0184706000042"];
+// var token = getFoodRepoToken();
+// var foodnames = foodRepoParseName(JSON.parse(foodRepoRequest(ids, token)));
+var foodnames = ["Apple", "Banana", "Peach"];
 
-const App: () => React$Node = () => {
+// Colors--------------------
+const chestnut = "#8c4b37";
+const yellowGreen = "#d0d269";
+const sapGreen = "#5c8326";
+const lincolnGreen = "#1d5113";
+const darkGreen = "#07331b";
+
+// List Component---------------------------------------------
+
+const Item = ({ title }) => {
+  return (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+};
+
+const ListScreen = ({ navigation }) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <ScrollView style={styles.MainContainer}>
+        {foodnames.map((item, key) => (
+          <Item key={item} title={item}></Item>
+        ))}
+      </ScrollView>
+      <View style={styles.navbar}>
+        <Button title="Home" onPress={() => navigation.navigate("Home")} />
+      </View>
     </>
   );
 };
 
+// Home Component---------------------------------------------
+const HomeScreen = ({ navigation }) => {
+  return (
+    <>
+      <ScrollView style={styles.home}>
+        <Text style={styles.mainTitle}>Vegourmet</Text>
+        <View style={styles.missionStatement}>
+          <Text style={styles.missionText}>
+            Bacon ipsum dolor amet hamburger sirloin spare ribs prosciutto.
+            Chicken shank alcatra doner meatball brisket picanha shoulder
+            prosciutto kielbasa boudin pig capicola cow swine. Alcatra corned
+            beef shankle, pancetta frankfurter burgdoggen strip steak shank
+            kielbasa ribeye chicken turkey doner. Boudin picanha swine, pork
+            chop leberkas strip steak burgdoggen beef ribs. Meatloaf spare ribs
+            corned beef cow sausage turducken shank capicola drumstick salami.
+            Tongue alcatra shoulder corned beef pork chop chuck. Sirloin shank
+            tenderloin turkey cupim pastrami. Corned beef pig filet mignon, beef
+            tail rump meatloaf doner venison chicken. Hamburger andouille cupim
+            short ribs. Tri-tip bresaola tongue doner, shank biltong swine
+            venison beef spare ribs porchetta pork ball tip kielbasa jerky. Pork
+            loin short loin sausage, short ribs shank fatback chuck kevin
+            pancetta bresaola pork belly brisket ribeye. Drumstick shoulder pork
+            loin, tri-tip strip steak t-bone meatball ham hock beef picanha
+            kielbasa turkey pancetta sausage chicken.
+          </Text>
+        </View>
+      </ScrollView>
+      <View style={styles.navbar}>
+        <Button title="List" onPress={() => navigation.navigate("List")} />
+      </View>
+    </>
+  );
+};
+
+// Main App --------------------------------------------------
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: lincolnGreen,
+          },
+          headerTintColor: lincolnGreen,
+          headerTitleStyle: {
+            fontFamily: "san-serif",
+            fontStyle: "italic",
+            fontWeight: "bold",
+            color: yellowGreen,
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: "Home",
+          }}
+        />
+        <Stack.Screen name="List" component={ListScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+// Styling----------------------------------------------------
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    backgroundColor: yellowGreen,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  MainContainer: {
+    paddingTop: 12,
+    backgroundColor: sapGreen,
+    height: 1300,
   },
-  body: {
-    backgroundColor: Colors.white,
+  item: {
+    backgroundColor: chestnut,
+    height: 150,
+    justifyContent: "center",
+    marginVertical: 8,
+    marginHorizontal: 16,
+    padding: 20,
+    borderRadius: 20,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  title: {
+    fontSize: 32,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  home: {
+    display: "flex",
+    alignItems: "center",
+    backgroundColor: sapGreen,
+    height: 1300,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  mainTitle: {
+    fontSize: 64,
+    color: yellowGreen,
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+    marginTop: 12,
+    marginBottom: 20,
   },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
+  missionText: {
+    color: "#fff",
     fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+  },
+  missionStatement: {
+    width: 300,
+    backgroundColor: chestnut,
+    padding: 20,
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  navbar: {
+    width: "100%",
+    height: 80,
+    backgroundColor: lincolnGreen,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 0,
   },
 });
 
