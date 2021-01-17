@@ -5,7 +5,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
 } from "react-native";
 import {
   yellowGreen,
@@ -14,15 +14,34 @@ import {
   lincolnGreen,
   darkGreen,
 } from "../../Colors";
-import Item from "../Item";
 
-const ListScreen = ({ navigation }) => {
+const AlternativeScreen = ({ navigation }) => {
   return (
     <>
-      <ScrollView contentContainerStyle={styles.MainContainer}>
-        {foodnames.map((item, key) => (
-          <Item key={item} title={item}></Item>
-        ))}
+      <ScrollView contentContainerStyle={styles.diet}>
+        <View style={styles.titleStatement}>
+          <Text style={styles.mainTitle}>Alternative</Text>
+        </View>
+        <View style={styles.dietBox}>
+          <View style={styles.altItem}>
+            <Text style={styles.altTitle}>Scanned Item:</Text>
+          </View>
+          <View style={styles.altItem}>
+            <Text style={styles.altName}>Item</Text>
+          </View>
+        </View>
+        <Image
+          style={styles.arrowIcon}
+          source={require("./arrow-down.png")}
+        ></Image>
+        <View style={styles.dietBox}>
+          <View style={styles.altItem}>
+            <Text style={styles.altTitle}>Alternative Item:</Text>
+          </View>
+          <View style={styles.altItem}>
+            <Text style={styles.altName}>Item</Text>
+          </View>
+        </View>
       </ScrollView>
       <View style={styles.navbar}>
         <View style={styles.white}>
@@ -33,7 +52,7 @@ const ListScreen = ({ navigation }) => {
           >
             <Image
               style={styles.mainIcon}
-              source={require("../../images/home.png")}
+              source={require("./home.png")}
             ></Image>
           </TouchableOpacity>
         </View>
@@ -45,10 +64,158 @@ const ListScreen = ({ navigation }) => {
 var foodnames = ["Apple", "Banana", "Peach"];
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: yellowGreen,
+  },
   MainContainer: {
     paddingTop: 12,
     backgroundColor: sapGreen,
-    height: Dimensions.get("window").height,
+    height: 1300,
+  },
+  camera: {
+    height: 70,
+    width: 70,
+    backgroundColor: darkGreen,
+    borderRadius: 150,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  altTitle: {
+    height: 20,
+    color: yellowGreen,
+    fontSize: 32,
+  },
+  altName: {
+    height: 30,
+    fontStyle: "italic",
+    fontWeight: "bold",
+    fontFamily: "san-serif",
+    color: yellowGreen,
+    fontSize: 20,
+  },
+  white: {
+    height: 70,
+    width: 70,
+    backgroundColor: "#fff",
+    borderRadius: 150,
+    bottom: 30,
+    zIndex: 1,
+  },
+  side: {
+    height: 50,
+    width: 50,
+    backgroundColor: darkGreen,
+    borderRadius: 150,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  sideWhite: {
+    height: 50,
+    width: 50,
+    backgroundColor: "#fff",
+    borderRadius: 150,
+    zIndex: 1,
+  },
+  mainIcon: {
+    width: 40,
+    height: 40,
+    resizeMode: "stretch",
+  },
+  arrowIcon: {
+    width: 100,
+    height: 100,
+    margin: 40,
+    resizeMode: "stretch",
+  },
+  sideIcon: {
+    width: 25,
+    height: 25,
+    resizeMode: "stretch",
+  },
+  logo: {
+    width: 63,
+    height: 180,
+    marginLeft: 15,
+    resizeMode: "stretch",
+  },
+  item: {
+    backgroundColor: chestnut,
+    height: 150,
+    justifyContent: "center",
+    marginVertical: 8,
+    marginHorizontal: 16,
+    padding: 20,
+    borderRadius: 20,
+  },
+  dietItem: {
+    display: "flex",
+    flexDirection: "row",
+    height: 90,
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 20,
+  },
+  altItem: {
+    display: "flex",
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 32,
+  },
+  home: {
+    display: "flex",
+    alignItems: "center",
+    backgroundColor: sapGreen,
+    height: 1300,
+  },
+  dietName: {
+    fontSize: 24,
+    color: yellowGreen,
+  },
+  diet: {
+    display: "flex",
+    alignItems: "center",
+    backgroundColor: sapGreen,
+    height: 2200,
+  },
+  mainTitle: {
+    fontSize: 55,
+    color: yellowGreen,
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+  },
+  missionText: {
+    color: "#fff",
+    fontSize: 18,
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+    color: yellowGreen,
+  },
+  missionStatement: {
+    width: 325,
+    backgroundColor: lincolnGreen,
+    padding: 20,
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  dietBox: {
+    width: 350,
+    backgroundColor: lincolnGreen,
+    padding: 10,
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  titleStatement: {
+    margin: 0,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+    marginBottom: 20,
   },
   navbar: {
     width: "100%",
@@ -62,27 +229,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingBottom: 15,
   },
-  white: {
-    height: 70,
-    width: 70,
-    backgroundColor: "#fff",
-    borderRadius: 150,
-    bottom: 30,
-    zIndex: 1,
-  },
-  camera: {
-    height: 70,
-    width: 70,
-    backgroundColor: darkGreen,
-    borderRadius: 150,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  mainIcon: {
-    width: 40,
-    height: 40,
-    resizeMode: "stretch",
+  missionText2: {
+    color: "#fff",
+    fontSize: 18,
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+    color: yellowGreen,
+    textAlign: "center",
   },
 });
 
-export default ListScreen;
+export default AlternativeScreen;
