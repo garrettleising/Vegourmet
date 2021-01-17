@@ -1,5 +1,11 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Button } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Item from "../Item";
 
 const ListScreen = ({ navigation }) => {
