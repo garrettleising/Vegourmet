@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+## Inspiration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Eating healthy has always been appealing, but it has always been difficult to give up the foods we love. Trying to find a solution to conveniently give healthy alternatives was our goal this hackathon.
 
-## Available Scripts
+## What it does
 
-In the project directory, you can run:
+Our mobile app lets the user select whether they want vegan, vegetarian, or pescetarian food options. They are also able to select any allergies they might have. They can now use the most exciting part of the app which lets the user scan barcodes of food items and give alternatives within the parameters specified.
 
-### `npm start`
+## How we built 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We built this app using React Native and Android Studio. We fetched data from APIs using HTTP requests and saved the data internally. We used machine learning models for the camera to accurately detect bar codes and then send the data to our parsing functions.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Challenges we ran into
 
-### `npm test`
+We struggled to connect the APIs to our Mobile App. Getting the HTTP requests to update the state of our app was very challenging. One of the servers for the APIs crashed and we weren't able to test our app for a few hours.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Accomplishments that we're proud of
 
-### `npm run build`
+None of us have had previous experience building a mobile app and we were able to make a fully functioning project in the duration of the hackathon. Getting everything to connect while also learning how to build mobile apps was extremely challenging.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What we learned
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We learned a lot about mobile development and the intricacies of react-native. Learning how to coordinate effectively, by making sure everyone had something to do, was key to the success of the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What's next for Vegourmet
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We plan on adding the ability to grab nutrition info for the items that were scanned and their replacements. This can give the user a better idea of why the alternative item is better for them. We would also like to eventually publish this app to the google play store for everyone to use.
