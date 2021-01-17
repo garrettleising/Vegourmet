@@ -72,6 +72,13 @@ const styles = StyleSheet.create({
     backgroundColor: sapGreen,
     height: 1300,
   },
+  teamImage: {
+    height: 170,
+    width: 300,
+    resizeMode: "stretch",
+    borderRadius: 30,
+    marginBottom: 10,
+  },
   camera: {
     height: 70,
     width: 70,
@@ -81,7 +88,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   altTitle: {
-    height: 20,
+    height: 32,
     color: yellowGreen,
     fontSize: 32,
   },
@@ -161,6 +168,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    marginBottom: 20,
   },
   title: {
     fontSize: 32,
@@ -189,13 +197,30 @@ const styles = StyleSheet.create({
   },
   missionText: {
     color: "#fff",
-    fontSize: 18,
+    fontSize: 22,
     fontFamily: "san-serif",
     fontStyle: "italic",
     color: yellowGreen,
   },
+  teamText: {
+    color: "#fff",
+    fontSize: 18,
+    fontFamily: "san-serif",
+    color: yellowGreen,
+    marginTop: 10,
+  },
   missionStatement: {
-    width: 325,
+    width: 350,
+    backgroundColor: lincolnGreen,
+    padding: 20,
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  teamStatement: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 350,
     backgroundColor: lincolnGreen,
     padding: 20,
     borderRadius: 20,
@@ -215,7 +240,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   navbar: {
     width: "100%",
