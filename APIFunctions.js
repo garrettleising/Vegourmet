@@ -80,21 +80,23 @@ function bonAPIParseIngredients(request) {
   ];
 }
 
-function main(barcodes, allergies, diet) {
+function main(barcodes, allergies, diet){
   let token = getFoodRepoToken;
-  let foodnames = foodRepoParseName(
-    JSON.parse(foodRepoRequest(barcodes, token))
-  );
-  let foods = foodnames.join(",").split(" ").join("_").split(",");
-  //gotta clean the data or rig it...
-  foods = ["eggs", "bread", "milk"]; //delete
 
-  token = getBonApiToken;
-  let ingredients = bonAPIParseIngredients(
-    JSON.parse(bonApiRequest(foods, allergies, diet, token))
-  );
-
-  return [foods, ingredients[0], ingredients[1]];
+  let foodnames = foodRepoParseName(JSON.parse(foodRepoRequest(barcodes,token)));
+  let foods = foodnames.join(',').split(' ').join('_').split(',');
+  if (foods[0]){
+      token = getBonApiToken;
+      let ingredients = bonApiRequest(foods,allergies,diet,token);
+      if (ingredients.includes("BonAPI | Error 500")){
+          return[-1, "Recipe not found"];
+      } else {
+          let parsed = bonAPIParseIngredients(JSON.parse(ingredients));
+          return [foods, parsed[0], parsed[1]];
+      }
+  } else {
+      return [-1, "Barcode not found"];
+  }
 }
 
 //////////////////////EVERYTHING BELOW HERE IS JUST TO RUN MAIN.
