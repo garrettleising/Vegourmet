@@ -1,14 +1,17 @@
 import { getBonApiToken, getFoodRepoToken } from "./APIKeys.js";
+import { Alert } from 'react-native';
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-function httpGet(theUrl, token) {
-  let xmlHttp = new XMLHttpRequest();
-  xmlHttp.responseType = "json";
-  xmlHttp.open("GET", theUrl, false); //opens get req
-  xmlHttp.setRequestHeader("Authorization", token); //adds token
-  xmlHttp.send(null); //send
-  return xmlHttp.responseText; //returns response raw
+function httpGet(url, token) {
+  let response = fetch(url, {
+    method:'GET', 
+    headers:{
+      Authorization: token,
+      Accept: 'application/json'
+    }
+  });
+  Alert.alert(typeof response);
+  console.log(response);
+  return response;
 }
 
 function formatToken(token) {
@@ -26,7 +29,7 @@ function getFoodRepoURL(ids) {
 
 function foodRepoRequest(ids, token) {
   let key = formatToken(token);
-  let url = getFoodRepoURL(ids.join("%2C")); //%2C is a comma i guess?
+  let url = getFoodRepoURL(ids); //%2C is a comma i guess?
   return httpGet(url, key);
 }
 
@@ -34,7 +37,7 @@ function foodRepoParseName(request) {
   let i;
   let names = [];
   for (i = 0; i < request["data"].length; i++) {
-    names.push(request["data"][i]["name_translations"]["en"]); //take english names only
+    names = names + [request["data"][i]["name_translations"]["en"], ]; //take english names only
   }
   return names;
 }
@@ -80,7 +83,7 @@ function bonAPIParseIngredients(request) {
   ];
 }
 
-function main(barcodes, allergies, diet){
+export function main(barcodes, allergies, diet){
   let token = getFoodRepoToken;
 
   let foodnames = foodRepoParseName(JSON.parse(foodRepoRequest(barcodes,token)));
@@ -125,6 +128,3 @@ var allergies_enum = [
 ];
 var diet = diet_enum[1];
 var allergies = ["gluten_allergy", "egg_allergy", "mustard_allergy"];
-
-var a = main(ids, allergies, diet);
-console.log(a);

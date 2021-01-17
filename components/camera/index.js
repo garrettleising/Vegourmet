@@ -9,6 +9,26 @@ import {
   darkGreen,
 } from "../../Colors";
 
+import { main }  from "../../APIFunctions";
+
+const allergy = [  
+"mollusc_allergy",
+"mustard_allergy",
+"sesame_allergy",
+"gluten_allergy",
+"lactose_intolerance",
+"soy_allergy",
+"egg_allergy",
+"fish_allergy",
+"celergy_allergy",
+"crustacean_allergy",
+"peanut_allergy",
+"tree_nut_allergy",
+"wheat_allergy",
+"lupin_allergy",
+"milk_allergy",];
+const diet = "vegetarian";
+
 export default class Camera extends PureComponent {
   constructor(props) {
     super(props);
@@ -17,6 +37,7 @@ export default class Camera extends PureComponent {
     };
   }
 
+  // function for capturing images, currently not used
   takePic = async () => {
     if (this.camera && !this.state.takingPic) {
       let options = {
@@ -37,10 +58,6 @@ export default class Camera extends PureComponent {
         this.setState({ takingPic: false });
       }
     }
-  };
-
-  barcodeFound = (e) => {
-    Alert.alert("Barcode Found: " + e.data);
   };
 
   render() {
@@ -64,32 +81,9 @@ export default class Camera extends PureComponent {
             buttonPositive: "Ok",
             buttonNegative: "Cancel",
           }}
-          onBarCodeRead={this.barcodeFound}
+          onBarCodeRead={() => this.props.nav.navigate("About")}
         />
-
-        {/* <TouchableOpacity 
-                activeOpacity = {.5}
-                style = { styles.btnAlignment }
-                onPress={this.takePic}>
-                    <Text style= { styles.textFormat }>Take Picture!</Text>
-                </TouchableOpacity> */}
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  btnAlignment: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    marginBottom: 20,
-    height: 40,
-    backgroundColor: "#ffffff",
-  },
-
-  textFormat: {
-    fontSize: 35,
-  },
-});

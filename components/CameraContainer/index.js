@@ -21,7 +21,7 @@ const CameraContainer = ({ navigation }) => {
   return (
     <>
       <ScrollView style={styles.MainContainer}>
-        <Camera />
+        <Camera nav={navigation}/>
       </ScrollView>
       <View style={styles.navbar}>
         <View style={styles.white}>

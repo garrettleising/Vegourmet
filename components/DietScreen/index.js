@@ -44,7 +44,6 @@ const DietScreen = ({ navigation }) => {
     const newDiet = name;
     setDiet(newDiet);
     dietState = newDiet;
-    console.log(newDiet);
   }
 
   function allergyArray(name) {
@@ -59,7 +58,6 @@ const DietScreen = ({ navigation }) => {
     }
     setAllergy(newallergyArray);
     allergyState = newallergyArray;
-    console.log(newallergyArray);
   }
 
   const [diet, setDiet] = useState(dietState);
@@ -126,7 +124,7 @@ const DietScreen = ({ navigation }) => {
           >
             <Image
               style={styles.mainIcon}
-              source={require("./home.png")}
+              source={require("./../../images/home.png")}
             ></Image>
           </TouchableOpacity>
         </View>

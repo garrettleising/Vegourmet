@@ -65,7 +65,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.sideWhite}>
           <TouchableOpacity
             style={styles.side}
-            onPress={() => navigation.navigate("About")}
+            onPress={() => navigation.navigate("Diet")}
             activeOpacity={0.75}
           >
             <Image
