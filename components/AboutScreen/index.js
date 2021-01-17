@@ -38,6 +38,13 @@ const AboutScreen = ({ navigation }) => {
   );
 };
 
+// Colors--------------------
+const yellowGreen = "#fff";
+const chestnut = "#90a955";
+const sapGreen = "#4f772d";
+const lincolnGreen = "#31572c";
+const darkGreen = "#132a13";
+
 const styles = StyleSheet.create({
   home: {
     display: "flex",

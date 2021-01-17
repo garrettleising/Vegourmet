@@ -10,11 +10,6 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-// Colors--------------------
-const yellowGreen = "#fff";
-const sapGreen = "#4f772d";
-const lincolnGreen = "#31572c";
-
 const HomeScreen = ({ navigation }) => {
   return (
     <>
@@ -79,6 +74,11 @@ const HomeScreen = ({ navigation }) => {
     </>
   );
 };
+
+// Colors--------------------
+const yellowGreen = "#fff";
+const sapGreen = "#4f772d";
+const lincolnGreen = "#31572c";
 
 const styles = StyleSheet.create({
   home: {
