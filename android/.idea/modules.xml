@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vegourmet.iml" filepath="$PROJECT_DIR$/.idea/modules/vegourmet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/vegourmet.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/vegourmet.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-731993785/vegourmet.react-native-camera.iml" filepath="$PROJECT_DIR$/.idea/modules/-731993785/vegourmet.react-native-camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1903351187/vegourmet.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/1903351187/vegourmet.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/71548580/vegourmet.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/71548580/vegourmet.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1283803384/vegourmet.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1283803384/vegourmet.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/690077197/vegourmet.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/690077197/vegourmet.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/308533861/vegourmet.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/308533861/vegourmet.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>
