@@ -25,9 +25,9 @@ const AboutScreen = ({ navigation }) => {
         <View style={styles.missionStatement}>
           <Text style={styles.missionText}>
             The goal of this app is to help people find healthier food options
-            in a quick and easy way. We hope this app can help people live
-            longer and better lives just from the food they eat. This was out
-            first time making a mobile app and plan to continue implementing
+            for food in a quick and easy way. We hope this app can help people
+            live longer and better lives just from the food they eat. This was
+            out first time making a mobile app and plan to continue implementing
             functionality in future updates.
           </Text>
         </View>
@@ -40,8 +40,12 @@ const AboutScreen = ({ navigation }) => {
             source={require("../../images/Team.jpg")}
           ></Image>
           <Text style={styles.teamText}>Garrett(left)</Text>
-          <Text style={styles.teamText}>Leo(middle)</Text>
-          <Text style={styles.teamText}>Jessalyn(right)</Text>
+          <Text style={styles.teamText}>Leo(right)</Text>
+          <Image
+            style={styles.jImage}
+            source={require("../../images/jessalyn.jpeg")}
+          ></Image>
+          <Text style={styles.teamText}>Jessalyn</Text>
         </View>
       </ScrollView>
       <View style={styles.navbar}>
@@ -53,7 +57,7 @@ const AboutScreen = ({ navigation }) => {
           >
             <Image
               style={styles.mainIcon}
-              source={require("../../images/home.png")}
+              source={require("./home.png")}
             ></Image>
           </TouchableOpacity>
         </View>
@@ -78,6 +82,14 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginBottom: 10,
   },
+  jImage: {
+    height: 230,
+    width: 230,
+    resizeMode: "stretch",
+    borderRadius: 30,
+    marginBottom: 10,
+    marginTop: 20,
+  },
   camera: {
     height: 70,
     width: 70,
@@ -87,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   altTitle: {
-    height: 20,
+    height: 32,
     color: yellowGreen,
     fontSize: 32,
   },
@@ -167,6 +179,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    marginBottom: 20,
   },
   title: {
     fontSize: 32,
