@@ -104,7 +104,14 @@ const DietScreen = ({ navigation }) => {
         <View style={styles.dietBox}>
           {allergies.map((item, key) => (
             <View key={key} style={styles.dietItem}>
-              <Text style={styles.dietName}>{item}</Text>
+              <Text style={styles.dietName}>
+                {
+                  <Text style={styles.dietName}>
+                    {item.charAt(0).toUpperCase() +
+                      item.split("_").join(" ").slice(1)}
+                  </Text>
+                }
+              </Text>
               <Switch
                 trackColor={{ false: "#767577", true: "#81b0ff" }}
                 ios_backgroundColor="#3e3e3e"
