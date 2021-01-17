@@ -27,7 +27,7 @@ const AboutScreen = ({ navigation }) => {
             The goal of this app is to help people find healthier food options
             for food in a quick and easy way. We hope this app can help people
             live longer and better lives just from the food they eat. This was
-            out first time making a mobile app and plan to continue implementing
+            our first time making a mobile app and plan to continue implementing
             functionality in future updates.
           </Text>
         </View>
