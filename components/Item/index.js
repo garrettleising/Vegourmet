@@ -1,12 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import {
-  yellowGreen,
-  chestnut,
-  sapGreen,
-  lincolnGreen,
-  darkGreen,
-} from "../../Colors";
 
 const Item = ({ title }) => {
   return (

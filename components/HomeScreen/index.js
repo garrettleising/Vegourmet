@@ -82,11 +82,6 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-// Colors--------------------
-const yellowGreen = "#fff";
-const sapGreen = "#4f772d";
-const lincolnGreen = "#31572c";
-
 const styles = StyleSheet.create({
   home: {
     display: "flex",
