@@ -57,7 +57,7 @@ const AboutScreen = ({ navigation }) => {
           >
             <Image
               style={styles.mainIcon}
-              source={require("./home.png")}
+              source={require("../../images/home.png")}
             ></Image>
           </TouchableOpacity>
         </View>
