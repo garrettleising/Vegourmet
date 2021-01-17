@@ -60,6 +60,15 @@ export default class Camera extends PureComponent {
     }
   };
 
+  barcodeFound = (e) => {
+
+      let lol = main('3184670026410', allergy, diet);
+      console.log(lol);
+
+      this.props.nav.navigate("About");
+    
+  };
+
   render() {
     return (
       <View>
@@ -81,7 +90,7 @@ export default class Camera extends PureComponent {
             buttonPositive: "Ok",
             buttonNegative: "Cancel",
           }}
-          onBarCodeRead={() => this.props.nav.navigate("About")}
+          onBarCodeRead={this.barcodeFound}
         />
       </View>
     );
