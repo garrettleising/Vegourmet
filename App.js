@@ -15,7 +15,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import CameraContainer from "./components/CameraContainer";
 import HomeScreen from "./components/HomeScreen";
 import AboutScreen from "./components/AboutScreen";
-import ListScreen from "./components/ListScreen";
+import AlternativeScreen from "./components/AlternativeScreen";
 import DietScreen from "./components/DietScreen";
 
 import {
@@ -55,7 +55,7 @@ const App = () => {
           />
           <Stack.Screen name="About" component={AboutScreen} />
           <Stack.Screen name="Scan a barcode!" component={CameraContainer} />
-          <Stack.Screen name="List" component={ListScreen} />
+          <Stack.Screen name="Alternative" component={AlternativeScreen} />
           <Stack.Screen name="Diet" component={DietScreen} />
         </Stack.Navigator>
       </NavigationContainer>
