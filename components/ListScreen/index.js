@@ -1,4 +1,3 @@
-import { forModalPresentationIOS } from "@react-navigation/stack/lib/typescript/src/TransitionConfigs/CardStyleInterpolators";
 import React from "react";
 import {
   View,
@@ -6,7 +5,15 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Dimensions
 } from "react-native";
+import {
+  yellowGreen,
+  chestnut,
+  sapGreen,
+  lincolnGreen,
+  darkGreen,
+} from "../../Colors";
 import Item from "../Item";
 
 const ListScreen = ({ navigation }) => {
