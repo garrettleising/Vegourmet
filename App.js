@@ -16,6 +16,7 @@ import CameraContainer from "./components/CameraContainer";
 import HomeScreen from "./components/HomeScreen";
 import AboutScreen from "./components/AboutScreen";
 import ListScreen from "./components/ListScreen";
+import DietScreen from "./components/DietScreen";
 
 import {
   yellowGreen,
@@ -55,6 +56,7 @@ const App = () => {
           <Stack.Screen name="About" component={AboutScreen} />
           <Stack.Screen name="Scan a barcode!" component={CameraContainer} />
           <Stack.Screen name="List" component={ListScreen} />
+          <Stack.Screen name="Diet" component={DietScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
