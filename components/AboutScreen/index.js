@@ -18,7 +18,7 @@ import {
 const AboutScreen = ({ navigation }) => {
   return (
     <>
-      <ScrollView style={styles.home}>
+      <ScrollView contentContainerStyle={styles.home}>
         <View style={styles.titleStatement}>
           <Text style={styles.mainTitle}>About</Text>
         </View>

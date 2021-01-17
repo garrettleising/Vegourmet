@@ -17,6 +17,14 @@ import HomeScreen from "./components/HomeScreen";
 import AboutScreen from "./components/AboutScreen";
 import ListScreen from "./components/ListScreen";
 
+import {
+  yellowGreen,
+  chestnut,
+  sapGreen,
+  lincolnGreen,
+  darkGreen,
+} from "./Colors";
+
 const Stack = createStackNavigator();
 
 const App = () => {

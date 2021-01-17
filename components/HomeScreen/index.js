@@ -20,24 +20,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 const HomeScreen = ({ navigation }) => {
   return (
     <>
-      <ScrollView style={styles.home}>
+      <ScrollView contentContainerStyle={styles.home}>
         <View style={styles.titleStatement}>
-          <Text style={styles.mainTitle}>Vegourmet</Text>
           <Image
             style={styles.logo}
             source={require("../../images/Vegourmet.png")}
           ></Image>
+          <Text style={styles.mainTitle}>Vegourmet</Text>
+          
         </View>
         <View style={styles.missionStatement}>
           <Text style={styles.missionText}>
-            Bacon ipsum dolor amet hamburger sirloin spare ribs prosciutto.
-            Chicken shank alcatra doner meatball brisket picanha shoulder
-            prosciutto kielbasa boudin pig capicola cow swine. Alcatra corned
-            beef shankle, pancetta frankfurter burgdoggen strip steak shank
-            kielbasa ribeye chicken turkey doner. Boudin picanha swine, pork
-            chop leberkas strip steak burgdoggen beef ribs. Meatloaf spare ribs
-            corned beef cow sausage turducken shank capicola
+            Scan. Find. Replace.
           </Text>
+          <Text style={styles.missionText2}>Find healthy alternatives to your favorite foods instantly! Head to settings to configure what you are looking for, and then travel back here and press the camera icon to get started!</Text>
         </View>
       </ScrollView>
       <View style={styles.navbar}>
@@ -92,7 +88,7 @@ const styles = StyleSheet.create({
   titleStatement: {
     margin: 0,
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
@@ -105,8 +101,8 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
   },
   logo: {
-    width: 21,
-    height: 60,
+    width: 63,
+    height: 180,
     marginLeft: 15,
     resizeMode: "stretch",
   },
@@ -119,10 +115,19 @@ const styles = StyleSheet.create({
   },
   missionText: {
     color: "#fff",
+    fontSize: 25,
+    fontFamily: "san-serif",
+    fontStyle: "italic",
+    color: yellowGreen,
+    textAlign: "center"
+  },
+  missionText2: {
+    color: "#fff",
     fontSize: 18,
     fontFamily: "san-serif",
     fontStyle: "italic",
     color: yellowGreen,
+    textAlign: "center"
   },
   navbar: {
     width: "100%",

@@ -19,7 +19,7 @@ import Item from "../Item";
 const ListScreen = ({ navigation }) => {
   return (
     <>
-      <ScrollView style={styles.MainContainer}>
+      <ScrollView contentContainerStyle={styles.MainContainer}>
         {foodnames.map((item, key) => (
           <Item key={item} title={item}></Item>
         ))}
