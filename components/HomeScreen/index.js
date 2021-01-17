@@ -6,7 +6,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
 } from "react-native";
 import {
   yellowGreen,
@@ -28,13 +28,14 @@ const HomeScreen = ({ navigation }) => {
             source={require("../../images/Vegourmet.png")}
           ></Image>
           <Text style={styles.mainTitle}>Vegourmet</Text>
-          
         </View>
         <View style={styles.missionStatement}>
-          <Text style={styles.missionText}>
-            Scan. Find. Replace.
+          <Text style={styles.missionText}>Scan. Find. Replace.</Text>
+          <Text style={styles.missionText2}>
+            Find healthy alternatives to your favorite foods instantly! Head to
+            settings to configure what you are looking for, and then travel back
+            here and press the camera icon to get started!
           </Text>
-          <Text style={styles.missionText2}>Find healthy alternatives to your favorite foods instantly! Head to settings to configure what you are looking for, and then travel back here and press the camera icon to get started!</Text>
         </View>
       </ScrollView>
       <View style={styles.navbar}>
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
     fontFamily: "san-serif",
     fontStyle: "italic",
     color: yellowGreen,
-    textAlign: "center"
+    textAlign: "center",
   },
   missionText2: {
     color: "#fff",
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     fontFamily: "san-serif",
     fontStyle: "italic",
     color: yellowGreen,
-    textAlign: "center"
+    textAlign: "center",
   },
   navbar: {
     width: "100%",
