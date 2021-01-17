@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Vegourmet.app"
-               BlueprintName = "Vegourmet"
-               ReferencedContainer = "container:Vegourmet.xcodeproj">
+               BuildableName = "vegourmet.app"
+               BlueprintName = "vegourmet"
+               ReferencedContainer = "container:vegourmet.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "VegourmetTests.xctest"
-               BlueprintName = "VegourmetTests"
-               ReferencedContainer = "container:Vegourmet.xcodeproj">
+               BuildableName = "vegourmetTests.xctest"
+               BlueprintName = "vegourmetTests"
+               ReferencedContainer = "container:vegourmet.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Vegourmet.app"
-            BlueprintName = "Vegourmet"
-            ReferencedContainer = "container:Vegourmet.xcodeproj">
+            BuildableName = "vegourmet.app"
+            BlueprintName = "vegourmet"
+            ReferencedContainer = "container:vegourmet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Vegourmet.app"
-            BlueprintName = "Vegourmet"
-            ReferencedContainer = "container:Vegourmet.xcodeproj">
+            BuildableName = "vegourmet.app"
+            BlueprintName = "vegourmet"
+            ReferencedContainer = "container:vegourmet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -3,12 +3,14 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'Vegourmet' do
+target 'vegourmet' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'VegourmetTests' do
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  target 'vegourmetTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +25,10 @@ target 'Vegourmet' do
   end
 end
 
-target 'Vegourmet-tvOS' do
-  # Pods for Vegourmet-tvOS
+target 'vegourmet-tvOS' do
+  # Pods for vegourmet-tvOS
 
-  target 'Vegourmet-tvOSTests' do
+  target 'vegourmet-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
