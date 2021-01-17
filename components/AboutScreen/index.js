@@ -1,23 +1,12 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Text, Dimensions } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 
-// Colors--------------------
-const yellowGreen = "#fff";
-const sapGreen = "#4f772d";
-const lincolnGreen = "#31572c";
-
-const HomeScreen = ({ navigation }) => {
+const AboutScreen = ({ navigation }) => {
   return (
     <>
       <ScrollView style={styles.home}>
         <View style={styles.titleStatement}>
-          <Text style={styles.mainTitle}>Vegourmet</Text>
-          <Image
-            style={styles.logo}
-            source={require("../../images/Vegourmet.png")}
-          ></Image>
+          <Text style={styles.mainTitle}>About</Text>
         </View>
         <View style={styles.missionStatement}>
           <Text style={styles.missionText}>
@@ -32,39 +21,15 @@ const HomeScreen = ({ navigation }) => {
         </View>
       </ScrollView>
       <View style={styles.navbar}>
-        <View style={styles.sideWhite}>
-          <TouchableOpacity
-            style={styles.side}
-            onPress={() => navigation.navigate("About")}
-            activeOpacity={0.75}
-          >
-            <Image
-              style={styles.sideIcon}
-              source={require("../../images/help-circle.png")}
-            ></Image>
-          </TouchableOpacity>
-        </View>
         <View style={styles.white}>
           <TouchableOpacity
             style={styles.camera}
-            onPress={() => navigation.navigate("List")}
+            onPress={() => navigation.navigate("Home")}
             activeOpacity={0.75}
           >
             <Image
               style={styles.mainIcon}
-              source={require("../../images/camera.png")}
-            ></Image>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.sideWhite}>
-          <TouchableOpacity
-            style={styles.side}
-            onPress={() => navigation.navigate("About")}
-            activeOpacity={0.75}
-          >
-            <Image
-              style={styles.sideIcon}
-              source={require("../../images/settings.png")}
+              source={require("../../images/home.png")}
             ></Image>
           </TouchableOpacity>
         </View>
@@ -95,12 +60,6 @@ const styles = StyleSheet.create({
     fontFamily: "san-serif",
     fontStyle: "italic",
   },
-  logo: {
-    width: 21,
-    height: 60,
-    marginLeft: 15,
-    resizeMode: "stretch",
-  },
   missionStatement: {
     width: 325,
     backgroundColor: lincolnGreen,
@@ -127,26 +86,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingBottom: 15,
   },
-  sideWhite: {
-    height: 50,
-    width: 50,
-    backgroundColor: "#fff",
-    borderRadius: 150,
-    zIndex: 1,
-  },
-  side: {
-    height: 50,
-    width: 50,
-    backgroundColor: darkGreen,
-    borderRadius: 150,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  sideIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: "stretch",
-  },
   white: {
     height: 70,
     width: 70,
@@ -170,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default AboutScreen;
