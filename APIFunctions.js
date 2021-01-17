@@ -1,17 +1,40 @@
 import { getBonApiToken, getFoodRepoToken } from "./APIKeys.js";
 import { Alert } from 'react-native';
 
-function httpGet(url, token) {
-  let response = fetch(url, {
-    method:'GET', 
-    headers:{
-      Authorization: token,
-      Accept: 'application/json'
-    }
-  });
-  Alert.alert(typeof response);
-  console.log(response);
-  return response;
+async function httpGet(theUrl, token) {
+  // let xmlHttp = new XMLHttpRequest();
+  // xmlHttp.responseType = "json";
+  // xmlHttp.open("GET", theUrl); //opens get req
+  // xmlHttp.setRequestHeader("Authorization", token); //adds token
+  // xmlHttp.send(null); //send
+  // console.log(xmlHttp.response)
+  // return xmlHttp.response; //returns response raw
+
+  // let xmlHttp = new XMLHttpRequest();
+  // let test = "";
+  
+  // xmlHttp.onreadystatechange = (e) => {
+  //   if (xmlHttp.readyState !== 4) {
+  //     return;
+  //   }
+  
+  //   if (xmlHttp.status === 200) {
+  //     console.log(xmlHttp.response);
+  //     test = xmlHttp.response;
+  //   } else {
+  //     Alert.alert('error');
+  //   }
+  // };
+  
+  // xmlHttp.open("GET", theUrl); //opens get req
+  // xmlHttp.setRequestHeader("Authorization", token); //adds token
+  // xmlHttp.send();
+  // console.log(test);
+  // return xmlHttp.response;
+
+  const response = await fetch(theUrl, {method:'GET', headers:{Authorization: token}});
+  const json = await response.json();
+  return json;
 }
 
 function formatToken(token) {
@@ -37,7 +60,7 @@ function foodRepoParseName(request) {
   let i;
   let names = [];
   for (i = 0; i < request["data"].length; i++) {
-    names = names + [request["data"][i]["name_translations"]["en"], ]; //take english names only
+    names = names.push(request["data"][i]["name_translations"]["en"]); //take english names only
   }
   return names;
 }
@@ -85,21 +108,26 @@ function bonAPIParseIngredients(request) {
 
 export function main(barcodes, allergies, diet){
   let token = getFoodRepoToken;
-
-  let foodnames = foodRepoParseName(JSON.parse(foodRepoRequest(barcodes,token)));
-  let foods = foodnames.join(',').split(' ').join('_').split(',');
-  if (foods[0]){
+  foodRepoRequest(barcodes,token).then(test => {
+    let foodnames = foodRepoParseName(JSON.parse(test));
+    let foods = foodnames.join(',').split(' ').join('_').split(',');
+    if (foods[0]){
       token = getBonApiToken;
       let ingredients = bonApiRequest(foods,allergies,diet,token);
       if (ingredients.includes("BonAPI | Error 500")){
           return[-1, "Recipe not found"];
       } else {
-          let parsed = bonAPIParseIngredients(JSON.parse(ingredients));
-          return [foods, parsed[0], parsed[1]];
+          let lmfao = bonAPIParseIngredients(ingredients).then(parsed => {
+            return [foods, parsed[0], parsed[1]];
+          });
+
+          return lmfao;
       }
-  } else {
+    } else {
       return [-1, "Barcode not found"];
   }
+  });
+  
 }
 
 //////////////////////EVERYTHING BELOW HERE IS JUST TO RUN MAIN.
