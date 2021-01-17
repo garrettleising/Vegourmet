@@ -53,11 +53,6 @@ const App = () => {
   );
 };
 
-// Colors--------------------
-const yellowGreen = "#fff";
-const sapGreen = "#4f772d";
-const lincolnGreen = "#31572c";
-
 const styles = StyleSheet.create({
   nav: {
     height: Dimensions.get("window").height,
