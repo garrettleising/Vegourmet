@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   home: {
     display: "flex",
     alignItems: "center",
-    paddingTop: 50,
+    paddingTop: 40,
     backgroundColor: sapGreen,
     height: Dimensions.get("window").height - 80,
   },
