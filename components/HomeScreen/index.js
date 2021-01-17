@@ -7,6 +7,13 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import {
+  yellowGreen,
+  chestnut,
+  sapGreen,
+  lincolnGreen,
+  darkGreen,
+} from "../../Colors";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 

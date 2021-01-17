@@ -1,3 +1,4 @@
+import { forModalPresentationIOS } from "@react-navigation/stack/lib/typescript/src/TransitionConfigs/CardStyleInterpolators";
 import React from "react";
 import {
   View,
@@ -33,10 +34,6 @@ const ListScreen = ({ navigation }) => {
     </>
   );
 };
-
-// Colors--------------------
-const sapGreen = "#4f772d";
-const lincolnGreen = "#31572c";
 
 var foodnames = ["Apple", "Banana", "Peach"];
 

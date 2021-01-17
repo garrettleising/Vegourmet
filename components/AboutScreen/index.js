@@ -1,5 +1,12 @@
 import React from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import {
+  yellowGreen,
+  chestnut,
+  sapGreen,
+  lincolnGreen,
+  darkGreen,
+} from "../../Colors";
 
 const AboutScreen = ({ navigation }) => {
   return (

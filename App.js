@@ -14,6 +14,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import CameraContainer from "./components/CameraContainer";
 import HomeScreen from "./components/HomeScreen";
+import AboutScreen from "./components/AboutScreen";
+import ListScreen from "./components/ListScreen";
 
 const Stack = createStackNavigator();
 
@@ -44,12 +46,17 @@ const App = () => {
           />
           <Stack.Screen name="About" component={AboutScreen} />
           <Stack.Screen name="Camera" component={CameraContainer} />
-          <Stack.Screen name="Diet" component={DietScreen} />
+          <Stack.Screen name="List" component={ListScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 };
+
+// Colors--------------------
+const yellowGreen = "#fff";
+const sapGreen = "#4f772d";
+const lincolnGreen = "#31572c";
 
 const styles = StyleSheet.create({
   nav: {

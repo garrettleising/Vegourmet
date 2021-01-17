@@ -6,6 +6,13 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import {
+  yellowGreen,
+  chestnut,
+  sapGreen,
+  lincolnGreen,
+  darkGreen,
+} from "../../Colors";
 
 import Camera from "../camera";
 
