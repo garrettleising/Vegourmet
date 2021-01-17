@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  Dimensions
 } from "react-native";
 import {
   yellowGreen,
@@ -82,8 +83,9 @@ const styles = StyleSheet.create({
   home: {
     display: "flex",
     alignItems: "center",
+    paddingTop: 50,
     backgroundColor: sapGreen,
-    height: 1300,
+    height: Dimensions.get("window").height - 80,
   },
   titleStatement: {
     margin: 0,
