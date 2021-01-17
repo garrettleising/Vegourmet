@@ -106,3 +106,5 @@ dist
 android/.gradle/
 android/.idea/
 android/app/build/
+
+APIKeys.js
