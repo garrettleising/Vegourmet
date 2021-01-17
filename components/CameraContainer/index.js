@@ -5,6 +5,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Dimensions
 } from "react-native";
 import {
   yellowGreen,
@@ -42,9 +43,8 @@ const CameraContainer = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   MainContainer: {
-    paddingTop: 12,
     backgroundColor: sapGreen,
-    height: 1300,
+    height: Dimensions.get("window").height - 80,
   },
   navbar: {
     width: "100%",

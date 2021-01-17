@@ -36,7 +36,7 @@ const App = () => {
             headerStyle: {
               backgroundColor: lincolnGreen,
             },
-            headerTintColor: lincolnGreen,
+            headerTintColor: yellowGreen,
             headerTitleStyle: {
               fontFamily: "san-serif",
               fontStyle: "italic",
@@ -53,7 +53,7 @@ const App = () => {
             }}
           />
           <Stack.Screen name="About" component={AboutScreen} />
-          <Stack.Screen name="Camera" component={CameraContainer} />
+          <Stack.Screen name="Scan a barcode!" component={CameraContainer} />
           <Stack.Screen name="List" component={ListScreen} />
         </Stack.Navigator>
       </NavigationContainer>

@@ -53,7 +53,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.white}>
           <TouchableOpacity
             style={styles.camera}
-            onPress={() => navigation.navigate("Camera")}
+            onPress={() => navigation.navigate("Scan a barcode!")}
             activeOpacity={0.75}
           >
             <Image
